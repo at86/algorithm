@@ -1,0 +1,2 @@
+# algorithm
+my favorite algorithms
