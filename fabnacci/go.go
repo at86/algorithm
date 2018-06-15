@@ -23,7 +23,7 @@ func fabnacci(pos int) int {
 }
 
 func implodeInt(arr *[]int, sep string) string {
-	// []string, then strings.Join()
+	//atdo []string, then strings.Join()
 	//var arrStr []string
 	//for _, v := range *arr {
 	//	arrStr = append(arrStr, strconv.Itoa(v))
@@ -50,11 +50,17 @@ func implodeInt(arr *[]int, sep string) string {
 //}
 
 func main() {
-	var arr []int
-	for i := 1; i < 20; i++ {
-		arr = append(arr, fabnacci(i))
-	}
+	//var arr []int
+	//for i := 1; i < 20; i++ {
+	//	arr = append(arr, fabnacci(i))
+	//}
 	//fmt.Println(arr)
+
+	pos:=20
+	var arr = make([]int, pos)
+	for i := 1; i < pos; i++ {
+		arr[i] = fabnacci(i)
+	}
 
 	//var arrStr []string
 	//for _, v := range arr {
