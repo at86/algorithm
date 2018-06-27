@@ -19,8 +19,31 @@ function fabnacci(int $pos)
     }
 }
 
-$arr = [];
-for ($i = 1; $i < 20; $i++) {
-    $arr[] = fabnacci($i);
+//$arr = [];
+//for ($i = 1; $i < 20; $i++) {
+//    $arr[] = fabnacci($i);
+//}
+//echo implode(',', $arr);
+
+$t=microtime(true);
+echo fabnacci(30),PHP_EOL;
+useTime($t);
+
+function useTime($preTime){
+    $t= microtime(true)-$preTime;
+    $t=$t*1000;
+    echo 'use time of: ',PHP_EOL;
+    echo number_format($t,6),' ms',PHP_EOL;
+//    echo round($t,6),PHP_EOL;
 }
-echo implode(',', $arr);
+
+echo PHP_EOL,'========== use recurse way',PHP_EOL;
+function fibonacci($n) {
+    if ($n < 2) {
+        return $n;
+    }
+    return fibonacci($n - 2) + fibonacci($n - 1);
+}
+$t=microtime(true);
+echo fibonacci(30),PHP_EOL;
+useTime($t);

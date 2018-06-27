@@ -4,6 +4,7 @@ import (
 	"strconv"
 	"fmt"
 	"bytes"
+	"time"
 )
 
 func fabnacci(pos int) int {
@@ -63,4 +64,25 @@ func main() {
 	//fmt.Println(strings.Join(arrStr, ","))
 
 	fmt.Println(implodeInt(&arr, ","))
+
+	t1 := time.Now()
+	fmt.Println(fabnacci(30))
+	useTime(t1)
+	t2 := time.Now()
+	fmt.Println(fibonacci(30))
+	useTime(t2)
+}
+
+func useTime(preTime time.Time) {
+	t := time.Since(preTime)
+	fmt.Println("use time of: ")
+	ns:=t.Nanoseconds()
+	fmt.Printf("%f ms\n", float64(ns)/1000000)
+}
+
+func fibonacci(n int) int {
+	if n < 2 {
+		return n
+	}
+	return fibonacci(n-2) + fibonacci(n-1)
 }

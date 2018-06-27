@@ -19,9 +19,24 @@ function fabnacci(place) {
 
 // fabnacci(0);
 
-let arr = [];
-for (let i = 1; i < 20; i++) {
-    let r = fabnacci(i);
-    arr.push(r);
+// let arr = [];
+// for (let i = 1; i < 20; i++) {
+//     let r = fabnacci(i);
+//     arr.push(r);
+// }
+// console.log(arr.toString())
+
+console.time('not recurse');
+console.log(fabnacci(30));
+console.timeEnd('not recurse');
+
+
+function fibonacci(n) {
+    if (n < 2) {
+        return n;
+    }
+    return fibonacci(n - 2) + fibonacci(n - 1);
 }
-console.log(arr.toString())
+console.time('recurse');
+console.log(fibonacci(30));
+console.timeEnd('recurse');
